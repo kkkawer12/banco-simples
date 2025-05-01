@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Criando duas contas
+        Conta conta1 = new Conta(1001, "João");
+        Conta conta2 = new Conta(1002, "Maria");
+
+        int opcao;
+
+        do {
+            System.out.println("\n=== MENU BANCÁRIO ===");
+            System.out.println("1 - Depositar na conta do João");
+            System.out.println("2 - Sacar da conta do João");
+            System.out.println("3 - Transferir de João para Maria");
+            System.out.println("4 - Exibir saldos");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Valor para depósito: ");
+                    double valorDep = scanner.nextDouble();
+                    conta1.depositar(valorDep);
+                    break;
+                case 2:
+                    System.out.print("Valor para saque: ");
+                    double valorSaq = scanner.nextDouble();
+                    conta1.sacar(valorSaq);
+                    break;
+                case 3:
+                    System.out.print("Valor para transferência: ");
+                    double valorTransf = scanner.nextDouble();
+                    conta1.transferir(conta2, valorTransf);
+                    break;
+                case 4:
+                    conta1.exibirSaldo();
+                    conta2.exibirSaldo();
+                    break;
+                case 0:
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+
+        } while (opcao != 0);
+
+        scanner.close();
+    }
+}
