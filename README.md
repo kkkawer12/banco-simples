@@ -1,8 +1,8 @@
-# 💰 Sistema Bancário Simples em Java
+#  Sistema Bancário Simples em Java
 
 Este é um projeto básico de sistema bancário desenvolvido em Java, com operações como depósito, saque, transferência e exibição de saldo. Ideal para fins de aprendizado e portfólio.
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 - Criar contas bancárias
 - Realizar depósitos
@@ -10,7 +10,7 @@ Este é um projeto básico de sistema bancário desenvolvido em Java, com opera�
 - Fazer transferências entre contas
 - Consultar saldo
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 
 - Java 
 - IntelliJ IDEA 
