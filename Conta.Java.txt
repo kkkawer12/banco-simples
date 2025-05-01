@@ -1,0 +1,49 @@
+public class Conta {
+    private int numero;
+    private String titular;
+    private double saldo;
+
+    public Conta(int numero, String titular) {
+        this.numero = numero;
+        this.titular = titular;
+        this.saldo = 0.0;
+    }
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            System.out.println("Depósito realizado com sucesso.");
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque realizado com sucesso.");
+        } else {
+            System.out.println("Saldo insuficiente.");
+        }
+    }
+
+    public void transferir(Conta destino, double valor) {
+        if (valor > 0 && valor <= saldo) {
+            this.sacar(valor);
+            destino.depositar(valor);
+            System.out.println("Transferência realizada.");
+        } else {
+            System.out.println("Transferência não autorizada.");
+        }
+    }
+
+    public void exibirSaldo() {
+        System.out.println("Saldo da conta " + numero + ": R$ " + saldo);
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+}
